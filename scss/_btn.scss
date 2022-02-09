@@ -1,0 +1,119 @@
+.btn{
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px;
+    height: 48px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    font-family: $familyRegular;
+    font-weight: 400;
+    font-size: 16px;
+    &.btn-svg{
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-appearance: listbox;
+        -webkit-transform: perspective(1px) translateZ(0);
+                transform: perspective(1px) translateZ(0);
+        -webkit-transition-duration: 0.1s;
+             -o-transition-duration: 0.1s;
+                transition-duration: 0.1s;
+        &.btn-svg-left{
+            span{
+                padding: 0 0 0 8px;
+            }   
+        }
+        svg{
+            width: 16px;
+            height: 16px;
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+            -webkit-transition: -webkit-transform 0.2s ease-out;
+            transition: -webkit-transform 0.2s ease-out;
+            -o-transition: transform 0.2s ease-out;
+            transition: transform 0.2s ease-out;
+            transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+            
+        }
+    }
+    &.btn-hover{
+        position: relative;
+        overflow: hidden;
+        &:before, &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            opacity: 1;
+            -webkit-transform: translate(-105%,0);
+                -ms-transform: translate(-105%,0);
+                    transform: translate(-105%,0);
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: rgba(255,255,255,1);
+            background-color: rgba(255,255,255,0.25);
+        }
+        &:after{
+            -webkit-transition-delay: 0.2s;
+                 -o-transition-delay: 0.2s;
+                    transition-delay: 0.2s;
+        }
+        &:hover{
+            &:before, &:after{
+                opacity: 0;
+                -webkit-transform: translate(0,0);
+                    -ms-transform: translate(0,0);
+                        transform: translate(0,0);
+            }
+        }
+    }
+    &.btn-white{
+        border-radius: 12px;
+        background-color: $color-white;
+        color: $color-black;
+    }
+    &.btn-green{
+        background: $color-green;
+        color: $color-white;
+    }
+    &:hover, &:active, &:focus{
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+        &.btn-svg{
+            &.btn-svg-left{
+                svg{
+                    -webkit-transform: translateX(3px);
+                        -ms-transform: translateX(3px);
+                            transform: translateX(3px);
+                }
+            }
+        }
+    }
+}
